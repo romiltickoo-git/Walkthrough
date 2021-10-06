@@ -1,0 +1,38 @@
+<!---XMl View  which being called in the index.js file Standlone XML View -->
+
+<!--<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+<Text text="Hi i'm from XML text!"></Text>
+
+</mvc:View> -->
+
+<!--Use of Controllers : we will add controllers in the our view-->
+<!--We have added one button and on press when user press button corresponding controller will get hit-->
+<!--As you can see Controller is Add on the top with Controller Name,Just look at the controller.js for logic-->
+
+<mvc:View
+    controllerName="search.po.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0">
+<Shell id = "shell_id">
+    <App id="app_id" >
+        <pages>
+        <Page id="page_id" title="Personal Information">
+<Button text="Say Hi" press=".onShow"/>
+<!--Since we have bind json model with our view as you can seen in the controller.js  for module and models section-->
+<Input value="{/recipient/name}" description="Hello{/recipient/name}" valueLiveUpdate="true" width="60%"/>
+<Button text="Clear" press=".onClear" icon="sap-icon://accept"/>
+        </Page>
+    </pages>
+    </App>
+</Shell>
+</mvc:View>
+
